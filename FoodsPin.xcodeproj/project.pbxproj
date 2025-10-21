@@ -8,14 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		F4A646162EA7BFC0002A9EBD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F4A646122EA7BFC0002A9EBD /* Assets.xcassets */; };
-		F4A646172EA7BFC0002A9EBD /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4A646132EA7BFC0002A9EBD /* ContentView.swift */; };
+		F4A646172EA7BFC0002A9EBD /* RestaurantsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4A646132EA7BFC0002A9EBD /* RestaurantsListView.swift */; };
 		F4A646182EA7BFC0002A9EBD /* FoodsPinApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4A646142EA7BFC0002A9EBD /* FoodsPinApp.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		F4A646042EA7BFA9002A9EBD /* FoodsPin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FoodsPin.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4A646122EA7BFC0002A9EBD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		F4A646132EA7BFC0002A9EBD /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		F4A646132EA7BFC0002A9EBD /* RestaurantsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantsListView.swift; sourceTree = "<group>"; };
 		F4A646142EA7BFC0002A9EBD /* FoodsPinApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodsPinApp.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -49,9 +49,9 @@
 		F4A646152EA7BFC0002A9EBD /* FoodsPin */ = {
 			isa = PBXGroup;
 			children = (
-				F4A646122EA7BFC0002A9EBD /* Assets.xcassets */,
-				F4A646132EA7BFC0002A9EBD /* ContentView.swift */,
 				F4A646142EA7BFC0002A9EBD /* FoodsPinApp.swift */,
+				F4A646132EA7BFC0002A9EBD /* RestaurantsListView.swift */,
+				F4A646122EA7BFC0002A9EBD /* Assets.xcassets */,
 			);
 			path = FoodsPin;
 			sourceTree = "<group>";
@@ -128,7 +128,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F4A646172EA7BFC0002A9EBD /* ContentView.swift in Sources */,
+				F4A646172EA7BFC0002A9EBD /* RestaurantsListView.swift in Sources */,
 				F4A646182EA7BFC0002A9EBD /* FoodsPinApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
