@@ -38,6 +38,9 @@ struct RestaurantsListView: View {
       ForEach($restaurants) { $restaurant in
         RestaurantRow(restaurant: $restaurant)
       }
+      .onDelete(perform: { indexSet in
+        restaurants.remove(atOffsets: indexSet)
+      })
       .listRowSeparator(.hidden)
     }
     .listStyle(.plain)
@@ -58,7 +61,7 @@ struct RestaurantRow: View {
         .scaledToFill()
         .frame(width: 120, height: 118)
         .clipShape(RoundedRectangle(cornerRadius: 20))
-        
+      
       
       VStack(alignment: .leading) {
         Text(restaurant.name)
@@ -76,26 +79,48 @@ struct RestaurantRow: View {
       
       Image(systemName: restaurant.isFavorite ? "heart.fill" : "heart")
     }
-    .onTapGesture {
-      isPresentedOptions.toggle()
-    }
-    .confirmationDialog("What do you want to do?", isPresented: $isPresentedOptions, titleVisibility: .visible) {
-      Button("Reserve a table") {
+    .contextMenu {
+      Button {
         isShowError.toggle()
+      } label: {
+        HStack {
+          Image(systemName: "phone")
+          Text("Reserve a table")
+        }
       }
       
-      Button("Mark as favorite") {
-        withAnimation {
-          restaurant.isFavorite.toggle()
+      Button {
+        restaurant.isFavorite.toggle()
+      } label: {
+        HStack {
+          Image(systemName: "heart")
+          Text(restaurant.isFavorite ? "Remove from favorites" : "Mark as favorite")
+        }
+      }
+      
+      Button {
+        isPresentedOptions.toggle()
+      } label: {
+        HStack {
+          Image(systemName: "square.and.arrow.up")
+          Text("Share")
         }
       }
     }
     .alert("Not yet available", isPresented: $isShowError) {
       Button("OK") {
-        
+        isShowError.toggle()
       }
     } message: {
       Text("Sorry, this feature is not available yet. Please retry later.")
+    }
+    .sheet(isPresented: $isPresentedOptions) {
+      let defaultText = "Just checking in at \(restaurant.name)"
+      if let imageToShare = UIImage(named: restaurant.image) {
+        ActivityView(activityItems: [defaultText, imageToShare])
+      } else {
+        ActivityView(activityItems: [defaultText])
+      }
     }
   }
 }
