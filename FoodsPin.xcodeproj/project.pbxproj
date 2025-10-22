@@ -7,12 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F43FA44E2EA90D68004CB0B2 /* RestaurantModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F43FA44D2EA90D68004CB0B2 /* RestaurantModel.swift */; };
 		F4A646162EA7BFC0002A9EBD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F4A646122EA7BFC0002A9EBD /* Assets.xcassets */; };
 		F4A646172EA7BFC0002A9EBD /* RestaurantsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4A646132EA7BFC0002A9EBD /* RestaurantsListView.swift */; };
 		F4A646182EA7BFC0002A9EBD /* FoodsPinApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4A646142EA7BFC0002A9EBD /* FoodsPinApp.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		F43FA44D2EA90D68004CB0B2 /* RestaurantModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantModel.swift; sourceTree = "<group>"; };
 		F4A646042EA7BFA9002A9EBD /* FoodsPin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FoodsPin.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4A646122EA7BFC0002A9EBD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F4A646132EA7BFC0002A9EBD /* RestaurantsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantsListView.swift; sourceTree = "<group>"; };
@@ -30,6 +32,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F43FA44B2EA90D49004CB0B2 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				F43FA44D2EA90D68004CB0B2 /* RestaurantModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		F43FA44C2EA90D52004CB0B2 /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				F4A646132EA7BFC0002A9EBD /* RestaurantsListView.swift */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
 		F4A645FB2EA7BFA9002A9EBD = {
 			isa = PBXGroup;
 			children = (
@@ -50,7 +68,8 @@
 			isa = PBXGroup;
 			children = (
 				F4A646142EA7BFC0002A9EBD /* FoodsPinApp.swift */,
-				F4A646132EA7BFC0002A9EBD /* RestaurantsListView.swift */,
+				F43FA44B2EA90D49004CB0B2 /* Models */,
+				F43FA44C2EA90D52004CB0B2 /* Screens */,
 				F4A646122EA7BFC0002A9EBD /* Assets.xcassets */,
 			);
 			path = FoodsPin;
@@ -129,6 +148,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F4A646172EA7BFC0002A9EBD /* RestaurantsListView.swift in Sources */,
+				F43FA44E2EA90D68004CB0B2 /* RestaurantModel.swift in Sources */,
 				F4A646182EA7BFC0002A9EBD /* FoodsPinApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
