@@ -32,6 +32,7 @@ struct RestaurantsListView: View {
     RestaurantModel(name: "Royal Oak", type: "British", location: "2 Regency Street London SW1P 4BZ United Kingdom", phone: "343-988834", description: "Specialise in great pub food. Established in 1872, we have local and world lagers, craft beer and a selection of wine and spirits for people to enjoy. Don't forget to try our range of Young's Ales and Fish and Chips.", image: "royaloak", isFavorite: false),
     RestaurantModel(name: "CASK Pub and Kitchen", type: "Thai", location: "22 Charlwood Street London SW1V 2DY Pimlico", phone: "432-344050", description: "With kitchen serving gourmet burgers. We offer food every day of the week, Monday through to Sunday. Join us every Sunday from 4:30 – 7:30pm for live acoustic music!", image: "cask", isFavorite: false)
   ]
+  @State private var isPresentedAddRestaurantSheet: Bool = false
   
   var body: some View {
     NavigationStack {
@@ -55,6 +56,19 @@ struct RestaurantsListView: View {
       }
       .listStyle(.plain)
       .navigationTitle("Food Pin")
+      .toolbar {
+        ToolbarItem(placement: .primaryAction) {
+          Button {
+            isPresentedAddRestaurantSheet.toggle()
+          } label: {
+            Image(systemName: "plus")
+          }
+
+        }
+      }
+      .sheet(isPresented: $isPresentedAddRestaurantSheet) {
+        NewRestaurantScreen()
+      }
     }
   }
 }
