@@ -9,6 +9,8 @@ import SwiftUI
 
 struct RestaurantDetailScreen: View {
   
+  @State private var isPresentedReviewView: Bool = false
+  
   let restaurant: RestaurantModel
   
   var body: some View {
@@ -75,12 +77,29 @@ struct RestaurantDetailScreen: View {
           .clipShape(RoundedRectangle(cornerRadius: 20))
           .padding()
       }
+      
+      Button {
+        isPresentedReviewView.toggle()
+      } label: {
+        Text("Rate it")
+          .font(.system(.headline, design: .rounded))
+          .frame(minWidth: 0, maxWidth: .infinity)
+      }
+      .tint(Color.accent)
+      .buttonStyle(.borderedProminent)
+      .buttonBorderShape(.roundedRectangle(radius: 25))
+      .controlSize(.large)
+      .padding(.horizontal)
+      .padding(.bottom, 20)
 
     }
     .ignoresSafeArea()
+    .overlay {
+      isPresentedReviewView ? ZStack { ReviewView(isDisplayed: $isPresentedReviewView, restaurant: restaurant) } : nil
+    }
   }
 }
 
 #Preview {
-  RestaurantDetailScreen(restaurant: RestaurantModel(name: "Cafe Deadend", type: "Coffee & Tea Shop", location: "G/F, 72 Po Hing Fong, Sheung Wan, Hong Kong", phone: "232-923423", description: "Searching for great breakfast eateries and coffee? This place is for you. We open at 6:30 every morning, and close at 9 PM. We offer espresso and espresso based drink, such as capuccino, cafe latte, piccolo and many more. Come over and enjoy a great meal.", image: "cafedeadend", isFavorite: true))
+  RestaurantDetailScreen(restaurant: RestaurantModel.restaurantData)
 }
