@@ -30,20 +30,32 @@ struct RestaurantDetailScreen: View {
                 .foregroundStyle(Color.primary)
                 .padding(.top, 40)
               
-              VStack(alignment: .leading, spacing: 5) {
-                Text(restaurant.name)
-                  .font(.custom("Nunito-Regular", size: 35, relativeTo: .largeTitle))
-                  .bold()
+              HStack(alignment: .bottom) {
+                VStack(alignment: .leading, spacing: 5) {
+                  Text(restaurant.name)
+                    .font(.custom("Nunito-Regular", size: 35, relativeTo: .largeTitle))
+                    .bold()
+                  
+                  Text(restaurant.type)
+                    .font(.system(.headline, design: .rounded))
+                    .padding(5)
+                    .background(Color.black)
+                }
+                .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity, alignment: .bottomLeading)
+                .foregroundStyle(Color.white)
+                .padding()
                 
-                Text(restaurant.type)
-                  .font(.system(.headline, design: .rounded))
-                  .padding(5)
-                  .background(Color.black)
+                if let rating = restaurant.rating, !isPresentedReviewView {
+                  Image(rating.image)
+                    .resizable()
+                    .frame(width: 60, height: 60)
+                    .padding([.bottom, .trailing])
+                    .transition(.scale)
+                }
               }
-              .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity, alignment: .bottomLeading)
-              .foregroundStyle(Color.white)
-              .padding()
             }
+            
+            
           }
       }
       
@@ -91,7 +103,7 @@ struct RestaurantDetailScreen: View {
       .controlSize(.large)
       .padding(.horizontal)
       .padding(.bottom, 20)
-
+      
     }
     .ignoresSafeArea()
     .overlay {
