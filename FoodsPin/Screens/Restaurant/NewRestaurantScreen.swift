@@ -6,23 +6,30 @@
 //
 
 import SwiftUI
+import SwiftData
 
 struct NewRestaurantScreen: View {
   
   @Environment(\.dismiss) private var dismiss
+  @Environment(\.modelContext) private var modelContext
   
-  //The reason why we store the image as an UIImage object is that the image returned from the photo library also has a type of UIImage
-  @State private var restaurantImage: UIImage = UIImage(named: "newphoto")!
-  @State private var photoSource: PhotoSource?
+  @Bindable private var restaurantFormVM: RestaurantFormViewModel
+  
   @State private var showPhotoOptions: Bool = false
   @State private var showImagePicker: Bool = false
   @State private var showCamera: Bool = false
+  
+  init() {
+    let viewModel = RestaurantFormViewModel()
+    viewModel.image = UIImage(named: "newphoto") ?? UIImage()
+    restaurantFormVM = viewModel
+  }
   
   var body: some View {
     NavigationStack {
       ScrollView {
         VStack {
-          Image(uiImage: restaurantImage)
+          Image(uiImage: restaurantFormVM.image)
             .resizable()
             .scaledToFill()
             .frame(minWidth: 0, maxWidth: .infinity)
@@ -34,15 +41,15 @@ struct NewRestaurantScreen: View {
               showPhotoOptions.toggle()
             }
           
-          FormTextField(value: .constant(""), label: "NAME", placeholder: "Fill in the restaurant name")
+          FormTextField(value: $restaurantFormVM.name, label: "NAME", placeholder: "Fill in the restaurant name")
           
-          FormTextField(value: .constant(""), label: "TYPE", placeholder: "Fill in the restaurant type")
+          FormTextField(value: $restaurantFormVM.type, label: "TYPE", placeholder: "Fill in the restaurant type")
           
-          FormTextField(value: .constant(""), label: "ADDRESS", placeholder: "Fill in the restaurant address")
+          FormTextField(value: $restaurantFormVM.location, label: "ADDRESS", placeholder: "Fill in the restaurant address")
           
-          FormTextField(value: .constant(""), label: "PHONE", placeholder: "Fill in the restaurant phone")
+          FormTextField(value: $restaurantFormVM.phone, label: "PHONE", placeholder: "Fill in the restaurant phone")
           
-          FormTextView(value: .constant(""), label: "DESCRIPTION", height: 100)
+          FormTextView(value: $restaurantFormVM.descript, label: "DESCRIPTION", height: 100)
         }
         .padding()
       }
@@ -58,7 +65,7 @@ struct NewRestaurantScreen: View {
         
         ToolbarItem(placement: .confirmationAction) {
           Button {
-            
+            save()
           } label: {
             Image(systemName: "checkmark")
           }
@@ -74,12 +81,25 @@ struct NewRestaurantScreen: View {
         }
       }
       .sheet(isPresented: $showImagePicker) {
-        ImagePicker(selectedImage: $restaurantImage)
+        ImagePicker(selectedImage: $restaurantFormVM.image)
       }
       .sheet(isPresented: $showCamera) {
-        CameraPicker(selectedImage: $restaurantImage)
+        CameraPicker(selectedImage: $restaurantFormVM.image)
       }
     }
+  }
+  
+  private func save() {
+    let newRestaurant = RestaurantModel(name: restaurantFormVM.name, type: restaurantFormVM.type, location: restaurantFormVM.type, phone: restaurantFormVM.phone, descript: restaurantFormVM.descript, image: restaurantFormVM.image)
+    modelContext.insert(newRestaurant)
+    
+    do {
+      try modelContext.save()
+    } catch {
+      fatalError("Can't save this restaurant")
+    }
+    
+    dismiss()
   }
 }
 

@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import SwiftData
 
 struct RestaurantDetailScreen: View {
   
@@ -16,7 +17,7 @@ struct RestaurantDetailScreen: View {
   var body: some View {
     ScrollView {
       VStack(alignment: .leading) {
-        Image(restaurant.image)
+        Image(uiImage: restaurant.image)
           .resizable()
           .scaledToFill()
           .frame(minWidth: 0, maxWidth: .infinity)
@@ -54,12 +55,10 @@ struct RestaurantDetailScreen: View {
                 }
               }
             }
-            
-            
           }
       }
       
-      Text(restaurant.description)
+      Text(restaurant.descript)
         .padding()
       
       HStack(alignment: .top) {
@@ -107,11 +106,17 @@ struct RestaurantDetailScreen: View {
     }
     .ignoresSafeArea()
     .overlay {
-      isPresentedReviewView ? ZStack { ReviewView(isDisplayed: $isPresentedReviewView, restaurant: restaurant) } : nil
+      isPresentedReviewView ? ZStack {
+        ReviewView(isDisplayed: $isPresentedReviewView, restaurant: restaurant)
+      } : nil
     }
   }
 }
 
 #Preview {
-  RestaurantDetailScreen(restaurant: RestaurantModel.restaurantData)
+  let container = RestaurantModel.preview
+  let fetchDescription = FetchDescriptor<RestaurantModel>()
+  let restaurant = try! container.mainContext.fetch(fetchDescription)[0]
+  RestaurantDetailScreen(restaurant: restaurant)
+    .modelContainer(container)
 }

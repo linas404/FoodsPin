@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import SwiftData
 
 struct ReviewView: View {
   
@@ -17,7 +18,7 @@ struct ReviewView: View {
   
   var body: some View {
     ZStack {
-      Image(restaurant.image)
+      Image(uiImage: restaurant.image)
         .resizable()
         .scaledToFill()
         .frame(minWidth: 0, maxWidth: .infinity)
@@ -72,5 +73,9 @@ struct ReviewView: View {
 }
 
 #Preview {
-  ReviewView(isDisplayed: .constant(true), restaurant: RestaurantModel.restaurantData)
+  let container = RestaurantModel.preview
+  let fetchDescription = FetchDescriptor<RestaurantModel>()
+  let restaurant = try! container.mainContext.fetch(fetchDescription)[0]
+  ReviewView(isDisplayed: .constant(true), restaurant: restaurant)
+    .modelContainer(container)
 }

@@ -6,17 +6,18 @@
 //
 
 import SwiftUI
+import SwiftData
 
 struct RestaurantRowView: View {
   
-  @Binding var restaurant: RestaurantModel
+  @Bindable var restaurant: RestaurantModel
   
   @State private var isPresentedOptions: Bool = false
   @State private var isShowError: Bool = false
   
   var body: some View {
     HStack(alignment: .top, spacing: 20) {
-      Image(restaurant.image)
+      Image(uiImage: restaurant.image)
         .resizable()
         .scaledToFill()
         .frame(width: 120, height: 118)
@@ -76,15 +77,15 @@ struct RestaurantRowView: View {
     }
     .sheet(isPresented: $isPresentedOptions) {
       let defaultText = "Just checking in at \(restaurant.name)"
-      if let imageToShare = UIImage(named: restaurant.image) {
-        ActivityView(activityItems: [defaultText, imageToShare])
-      } else {
-        ActivityView(activityItems: [defaultText])
-      }
+      ActivityView(activityItems: [defaultText, restaurant.image])
     }
   }
 }
 
 #Preview {
-  RestaurantRowView(restaurant: .constant(RestaurantModel.restaurantData))
+  let container = RestaurantModel.preview
+  let fetchDescription = FetchDescriptor<RestaurantModel>()
+  let restaurant = try! container.mainContext.fetch(fetchDescription)[0]
+  RestaurantRowView(restaurant: restaurant)
+    .modelContainer(container)
 }
