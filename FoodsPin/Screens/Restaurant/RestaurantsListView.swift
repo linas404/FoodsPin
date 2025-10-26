@@ -14,13 +14,16 @@ struct RestaurantsListView: View {
   @Query private var restaurants: [RestaurantModel]
   
   @Environment(\.modelContext) private var modelContext
+  
+  @AppStorage("hasViewedTutorialScreen") var hasViewedTutorialScreen: Bool = false
 
   @State private var isPresentedAddRestaurantSheet: Bool = false
+  @State private var isPresentedTutorialView: Bool = false
   
   var body: some View {
     NavigationStack {
       Group {
-        if !restaurants.isEmpty {
+        if restaurants.isEmpty {
           ContentUnavailableView("Empty Restaurants", systemImage: "fork.knife", description: Text("You need to add restaurants"))
 
         } else {
@@ -43,6 +46,9 @@ struct RestaurantsListView: View {
           .listStyle(.plain)
         }
       }
+      .onAppear(perform: {
+        //isPresentedTutorialView = hasViewedTutorialScreen ? false : true
+      })
       .navigationTitle("Food Pin")
       .toolbar {
         ToolbarItem(placement: .primaryAction) {
@@ -56,6 +62,9 @@ struct RestaurantsListView: View {
       }
       .sheet(isPresented: $isPresentedAddRestaurantSheet) {
         NewRestaurantScreen()
+      }
+      .sheet(isPresented: $isPresentedTutorialView) {
+        TutorialScreen()
       }
     }
   }

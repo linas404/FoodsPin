@@ -30,6 +30,9 @@ struct RestaurantDetailScreen: View {
                 .font(.system(size: 30))
                 .foregroundStyle(Color.primary)
                 .padding(.top, 40)
+                .onTapGesture {
+                  restaurant.isFavorite.toggle()
+                }
               
               HStack(alignment: .bottom) {
                 VStack(alignment: .leading, spacing: 5) {

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B044342A2EAE952C00B6BB9B /* HomeScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = B04434292EAE952C00B6BB9B /* HomeScreen.swift */; };
 		B05476BA2EAD08CD005293B9 /* RestaurantRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B05476B92EAD08CD005293B9 /* RestaurantRowView.swift */; };
 		B05476BC2EAD0C12005293B9 /* Rating+Enum.swift in Sources */ = {isa = PBXBuildFile; fileRef = B05476BB2EAD0C12005293B9 /* Rating+Enum.swift */; };
 		B05476BE2EAD0D1B005293B9 /* ReviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B05476BD2EAD0D1B005293B9 /* ReviewView.swift */; };
@@ -17,6 +18,8 @@
 		B05476C82EAD4613005293B9 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = B05476C72EAD4613005293B9 /* ImagePicker.swift */; };
 		B05476CA2EAD4891005293B9 /* CameraPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = B05476C92EAD4891005293B9 /* CameraPicker.swift */; };
 		B05476CC2EAD70CB005293B9 /* RestaurantFormViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B05476CB2EAD70CB005293B9 /* RestaurantFormViewModel.swift */; };
+		B05476D12EAD8042005293B9 /* TutorialScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = B05476D02EAD8042005293B9 /* TutorialScreen.swift */; };
+		B05476D32EAD8134005293B9 /* TutorialPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B05476D22EAD8134005293B9 /* TutorialPage.swift */; };
 		F43FA44E2EA90D68004CB0B2 /* RestaurantModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F43FA44D2EA90D68004CB0B2 /* RestaurantModel.swift */; };
 		F43FA4512EA92855004CB0B2 /* ActivityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F43FA4502EA92855004CB0B2 /* ActivityView.swift */; };
 		F43FA4532EA93E5D004CB0B2 /* RestaurantDetailScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = F43FA4522EA93E5D004CB0B2 /* RestaurantDetailScreen.swift */; };
@@ -30,6 +33,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B04434292EAE952C00B6BB9B /* HomeScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreen.swift; sourceTree = "<group>"; };
 		B05476B92EAD08CD005293B9 /* RestaurantRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantRowView.swift; sourceTree = "<group>"; };
 		B05476BB2EAD0C12005293B9 /* Rating+Enum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Rating+Enum.swift"; sourceTree = "<group>"; };
 		B05476BD2EAD0D1B005293B9 /* ReviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewView.swift; sourceTree = "<group>"; };
@@ -40,6 +44,8 @@
 		B05476C72EAD4613005293B9 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		B05476C92EAD4891005293B9 /* CameraPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraPicker.swift; sourceTree = "<group>"; };
 		B05476CB2EAD70CB005293B9 /* RestaurantFormViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantFormViewModel.swift; sourceTree = "<group>"; };
+		B05476D02EAD8042005293B9 /* TutorialScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialScreen.swift; sourceTree = "<group>"; };
+		B05476D22EAD8134005293B9 /* TutorialPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialPage.swift; sourceTree = "<group>"; };
 		F43FA44D2EA90D68004CB0B2 /* RestaurantModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantModel.swift; sourceTree = "<group>"; };
 		F43FA4502EA92855004CB0B2 /* ActivityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityView.swift; sourceTree = "<group>"; };
 		F43FA4522EA93E5D004CB0B2 /* RestaurantDetailScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantDetailScreen.swift; sourceTree = "<group>"; };
@@ -85,6 +91,15 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
+		B05476CF2EAD8034005293B9 /* Tutorial */ = {
+			isa = PBXGroup;
+			children = (
+				B05476D02EAD8042005293B9 /* TutorialScreen.swift */,
+				B05476D22EAD8134005293B9 /* TutorialPage.swift */,
+			);
+			path = Tutorial;
+			sourceTree = "<group>";
+		};
 		F43FA44B2EA90D49004CB0B2 /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -96,6 +111,8 @@
 		F43FA44C2EA90D52004CB0B2 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				B04434292EAE952C00B6BB9B /* HomeScreen.swift */,
+				B05476CF2EAD8034005293B9 /* Tutorial */,
 				B05476CD2EAD70D4005293B9 /* Restaurant */,
 			);
 			path = Screens;
@@ -257,7 +274,9 @@
 			files = (
 				B05476BE2EAD0D1B005293B9 /* ReviewView.swift in Sources */,
 				F43FA45F2EA94BFA004CB0B2 /* MapView.swift in Sources */,
+				B05476D32EAD8134005293B9 /* TutorialPage.swift in Sources */,
 				F4A646172EA7BFC0002A9EBD /* RestaurantsListView.swift in Sources */,
+				B05476D12EAD8042005293B9 /* TutorialScreen.swift in Sources */,
 				B05476BC2EAD0C12005293B9 /* Rating+Enum.swift in Sources */,
 				B05476CA2EAD4891005293B9 /* CameraPicker.swift in Sources */,
 				B05476CC2EAD70CB005293B9 /* RestaurantFormViewModel.swift in Sources */,
@@ -269,6 +288,7 @@
 				B05476C42EAD438D005293B9 /* FormTextView.swift in Sources */,
 				B05476BA2EAD08CD005293B9 /* RestaurantRowView.swift in Sources */,
 				F43FA4532EA93E5D004CB0B2 /* RestaurantDetailScreen.swift in Sources */,
+				B044342A2EAE952C00B6BB9B /* HomeScreen.swift in Sources */,
 				B05476C62EAD4517005293B9 /* PhotoSource+Enum.swift in Sources */,
 				B05476C02EAD405F005293B9 /* NewRestaurantScreen.swift in Sources */,
 				B05476C82EAD4613005293B9 /* ImagePicker.swift in Sources */,
