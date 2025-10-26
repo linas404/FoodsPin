@@ -23,7 +23,7 @@ struct HomeScreen: View {
       }
       
       Tab("About", systemImage: "square.stack", value: 2) {
-        Text("About")
+        AboutScreen()
       }
     }
     .tint(Color.accent)

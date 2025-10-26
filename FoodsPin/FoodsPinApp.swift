@@ -26,7 +26,7 @@ struct FoodsPinApp: App {
   
   var body: some Scene {
     WindowGroup {
-      RestaurantsListView()
+      HomeScreen()
     }
     .modelContainer(for: [RestaurantModel.self])
   }
