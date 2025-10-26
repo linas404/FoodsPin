@@ -58,8 +58,6 @@ class RestaurantModel  {
     self.isFavorite = isFavorite
     self.rating = rating
   }
-  
-  
 }
 
 extension RestaurantModel {

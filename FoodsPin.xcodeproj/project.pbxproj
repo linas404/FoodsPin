@@ -11,6 +11,8 @@
 		B044342D2EAE98DE00B6BB9B /* AboutScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = B044342C2EAE98DE00B6BB9B /* AboutScreen.swift */; };
 		B044342F2EAE9B1700B6BB9B /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B044342E2EAE9B1700B6BB9B /* WebView.swift */; };
 		B04434312EAE9CD400B6BB9B /* SafariView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B04434302EAE9CD400B6BB9B /* SafariView.swift */; };
+		B04434342EAEB24B00B6BB9B /* RestaurantCloudStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = B04434332EAEB24B00B6BB9B /* RestaurantCloudStore.swift */; };
+		B04434372EAEB38E00B6BB9B /* DiscoveryScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = B04434362EAEB38E00B6BB9B /* DiscoveryScreen.swift */; };
 		B05476BA2EAD08CD005293B9 /* RestaurantRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B05476B92EAD08CD005293B9 /* RestaurantRowView.swift */; };
 		B05476BC2EAD0C12005293B9 /* Rating+Enum.swift in Sources */ = {isa = PBXBuildFile; fileRef = B05476BB2EAD0C12005293B9 /* Rating+Enum.swift */; };
 		B05476BE2EAD0D1B005293B9 /* ReviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B05476BD2EAD0D1B005293B9 /* ReviewView.swift */; };
@@ -40,6 +42,9 @@
 		B044342C2EAE98DE00B6BB9B /* AboutScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutScreen.swift; sourceTree = "<group>"; };
 		B044342E2EAE9B1700B6BB9B /* WebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
 		B04434302EAE9CD400B6BB9B /* SafariView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafariView.swift; sourceTree = "<group>"; };
+		B04434322EAEAC9F00B6BB9B /* FoodsPin.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = FoodsPin.entitlements; sourceTree = "<group>"; };
+		B04434332EAEB24B00B6BB9B /* RestaurantCloudStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantCloudStore.swift; sourceTree = "<group>"; };
+		B04434362EAEB38E00B6BB9B /* DiscoveryScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoveryScreen.swift; sourceTree = "<group>"; };
 		B05476B92EAD08CD005293B9 /* RestaurantRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantRowView.swift; sourceTree = "<group>"; };
 		B05476BB2EAD0C12005293B9 /* Rating+Enum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Rating+Enum.swift"; sourceTree = "<group>"; };
 		B05476BD2EAD0D1B005293B9 /* ReviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewView.swift; sourceTree = "<group>"; };
@@ -85,6 +90,14 @@
 			path = About;
 			sourceTree = "<group>";
 		};
+		B04434352EAEB37E00B6BB9B /* Discovery */ = {
+			isa = PBXGroup;
+			children = (
+				B04434362EAEB38E00B6BB9B /* DiscoveryScreen.swift */,
+			);
+			path = Discovery;
+			sourceTree = "<group>";
+		};
 		B05476CD2EAD70D4005293B9 /* Restaurant */ = {
 			isa = PBXGroup;
 			children = (
@@ -118,6 +131,7 @@
 			isa = PBXGroup;
 			children = (
 				F43FA44D2EA90D68004CB0B2 /* RestaurantModel.swift */,
+				B04434332EAEB24B00B6BB9B /* RestaurantCloudStore.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -128,6 +142,7 @@
 				B04434292EAE952C00B6BB9B /* HomeScreen.swift */,
 				B05476CF2EAD8034005293B9 /* Tutorial */,
 				B05476CD2EAD70D4005293B9 /* Restaurant */,
+				B04434352EAEB37E00B6BB9B /* Discovery */,
 				B044342B2EAE98C500B6BB9B /* About */,
 			);
 			path = Screens;
@@ -203,6 +218,7 @@
 		F4A646152EA7BFC0002A9EBD /* FoodsPin */ = {
 			isa = PBXGroup;
 			children = (
+				B04434322EAEAC9F00B6BB9B /* FoodsPin.entitlements */,
 				F43FA45A2EA9435D004CB0B2 /* Info.plist */,
 				F4A646142EA7BFC0002A9EBD /* FoodsPinApp.swift */,
 				F43FA4542EA942E4004CB0B2 /* Utilities */,
@@ -299,6 +315,7 @@
 				B05476CA2EAD4891005293B9 /* CameraPicker.swift in Sources */,
 				B05476CC2EAD70CB005293B9 /* RestaurantFormViewModel.swift in Sources */,
 				F43FA4512EA92855004CB0B2 /* ActivityView.swift in Sources */,
+				B04434342EAEB24B00B6BB9B /* RestaurantCloudStore.swift in Sources */,
 				F43FA44E2EA90D68004CB0B2 /* RestaurantModel.swift in Sources */,
 				F43FA45D2EA947FC004CB0B2 /* UIColor+Ext.swift in Sources */,
 				B05476C22EAD4212005293B9 /* FormTextField.swift in Sources */,
@@ -306,6 +323,7 @@
 				F4A646182EA7BFC0002A9EBD /* FoodsPinApp.swift in Sources */,
 				B05476C42EAD438D005293B9 /* FormTextView.swift in Sources */,
 				B05476BA2EAD08CD005293B9 /* RestaurantRowView.swift in Sources */,
+				B04434372EAEB38E00B6BB9B /* DiscoveryScreen.swift in Sources */,
 				F43FA4532EA93E5D004CB0B2 /* RestaurantDetailScreen.swift in Sources */,
 				B044342A2EAE952C00B6BB9B /* HomeScreen.swift in Sources */,
 				B05476C62EAD4517005293B9 /* PhotoSource+Enum.swift in Sources */,
@@ -444,6 +462,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = FoodsPin/FoodsPin.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 95H4F25F77;
@@ -479,6 +498,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = FoodsPin/FoodsPin.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 95H4F25F77;

@@ -19,7 +19,7 @@ struct HomeScreen: View {
       }
       
       Tab("Discover", systemImage: "wand.and.rays", value: 1) {
-        Text("Discover")
+        DiscoveryScreen()
       }
       
       Tab("About", systemImage: "square.stack", value: 2) {
