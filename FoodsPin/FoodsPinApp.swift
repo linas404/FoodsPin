@@ -59,8 +59,6 @@ struct FoodsPinApp: App {
 
 final class MainSceneDelegate: UIResponder, UIWindowSceneDelegate {
   
-  @Environment(\.openURL) private var openURL: OpenURLAction
-  
   func windowScene(_ windowScene: UIWindowScene, performActionFor shortcutItem: UIApplicationShortcutItem, completionHandler: @escaping (Bool) -> Void) {
     completionHandler(handleQuickAction(shortcutItem: shortcutItem))
   }
@@ -77,7 +75,8 @@ final class MainSceneDelegate: UIResponder, UIWindowSceneDelegate {
       return false
     }
     
-    openURL(url)
+    // Naudokite UIApplication.shared.open vietoj @Environment openURL
+    UIApplication.shared.open(url, options: [:], completionHandler: nil)
     
     return true
   }
