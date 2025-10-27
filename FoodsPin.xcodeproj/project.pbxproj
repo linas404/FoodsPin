@@ -98,6 +98,14 @@
 			path = Discovery;
 			sourceTree = "<group>";
 		};
+		B04434382EAEC9CA00B6BB9B /* Store */ = {
+			isa = PBXGroup;
+			children = (
+				B04434332EAEB24B00B6BB9B /* RestaurantCloudStore.swift */,
+			);
+			path = Store;
+			sourceTree = "<group>";
+		};
 		B05476CD2EAD70D4005293B9 /* Restaurant */ = {
 			isa = PBXGroup;
 			children = (
@@ -131,7 +139,6 @@
 			isa = PBXGroup;
 			children = (
 				F43FA44D2EA90D68004CB0B2 /* RestaurantModel.swift */,
-				B04434332EAEB24B00B6BB9B /* RestaurantCloudStore.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -224,6 +231,7 @@
 				F43FA4542EA942E4004CB0B2 /* Utilities */,
 				F43FA44F2EA92842004CB0B2 /* UIKit */,
 				F43FA4602EA94C0B004CB0B2 /* Components */,
+				B04434382EAEC9CA00B6BB9B /* Store */,
 				F43FA44B2EA90D49004CB0B2 /* Models */,
 				F43FA44C2EA90D52004CB0B2 /* Screens */,
 				F4A646122EA7BFC0002A9EBD /* Assets.xcassets */,

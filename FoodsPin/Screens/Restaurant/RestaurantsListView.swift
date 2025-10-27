@@ -67,6 +67,12 @@ struct RestaurantsListView: View {
         TutorialScreen()
       }
     }
+    .onOpenURL(perform: { url in
+      switch url.path {
+        case "/NewRestaurant": isPresentedAddRestaurantSheet = true
+        default: return
+      }
+    })
   }
   
   private func deleteRestaurant(indexSet: IndexSet) {

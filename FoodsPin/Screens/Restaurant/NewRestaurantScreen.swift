@@ -99,6 +99,9 @@ struct NewRestaurantScreen: View {
       fatalError("Can't save this restaurant")
     }
     
+    let cloudStore = RestaurantCloudStore()
+    cloudStore.saveRecordToCloud(restaurant: newRestaurant)
+    
     dismiss()
   }
 }
